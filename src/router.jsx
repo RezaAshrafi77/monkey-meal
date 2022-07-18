@@ -6,11 +6,17 @@ import Home from "./views/Home";
 import Splash from "./views/Splash";
 
 export default function Router() {
+  const [splash, setSplash] = React.useState(true);
+  React.useEffect(() => {
+    setTimeout(() => {
+      setSplash(false);
+    }, 2000);
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/splash" exact element={<Splash />} />
-        <Route path="/" exact element={<Home />} />
+        <Route path="/" exact element={splash ? <Splash /> : <Home />} />
       </Routes>
     </BrowserRouter>
   );
