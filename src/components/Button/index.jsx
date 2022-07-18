@@ -16,13 +16,13 @@ const Button = ({
   const variants = useMemo(() => {
     return {
       outlined: `border border-solid border-${color} text-${color} bg-background`,
-      text: `text-${color} bg-transparent`,
+      text: `text-${color} bg-background`,
       contained: `bg-${color} text-background`,
     };
   }, [variant, color]);
   return (
     <button
-      className={`text-sm lg:text-[0.9vw] flex justify-center items-center font-medium cursor-pointer relative w-full ${
+      className={`text-tiny lg:text-[0.9vw] flex justify-center items-center font-medium cursor-pointer relative w-full ${
         " " + round + " " + color + " " + padding + " " + variants[variant]
       }`}
       onClick={(e) => {

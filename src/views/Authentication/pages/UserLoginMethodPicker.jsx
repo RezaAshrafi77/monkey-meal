@@ -43,7 +43,7 @@ export default function UserLoginMethodPicker({ setPage }) {
             title="Login"
             variant="contained"
             round="rounded-full"
-            color="bg-primary"
+            color="primary"
             padding="py-4"
             action={() => setPage("login")}
           />
@@ -51,7 +51,7 @@ export default function UserLoginMethodPicker({ setPage }) {
             title="Create an account"
             variant="outlined"
             round="rounded-full"
-            color="text-primary"
+            color="primary"
             padding="py-4"
             action={() => {}}
           />
