@@ -5,7 +5,7 @@ import Router from "./router";
 function App() {
   return (
     <div className="app">
-      <div className="h-screen w-screen flex flex-col" >
+      <div className="h-screen w-screen flex flex-col bg-background" >
         <Router />
       </div>
     </div>
