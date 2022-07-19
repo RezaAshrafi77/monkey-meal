@@ -53,7 +53,7 @@ export default function UserLoginMethodPicker({ setPage }) {
             round="rounded-full"
             color="primary"
             padding="py-4"
-            action={() => {}}
+            action={() => setPage("signup")}
           />
         </div>
       </div>

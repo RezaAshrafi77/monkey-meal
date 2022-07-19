@@ -6,15 +6,17 @@ import Button from "../../../components/Button";
 
 export default function Login({ loginForm, setLoginForm, setPage }) {
   return (
-    <div className="flex-1 flex flex-col items-center px-[6vw] py-[5vh]">
-      <div className="flex flex-col gap-4 items-center">
-        <h1 className="text-3xl text-backgroundText">Login</h1>
-        <p className="text-sm text-backgroundText">Add your details to login</p>
-      </div>
+    <div className="flex-1 flex flex-col justify-between items-center px-[6vw] py-[5vh]">
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-full flex flex-col items-center mt-[6vh] gap-[3vh]"
+        className="w-full flex flex-col items-center gap-[3vh]"
       >
+        <div className="flex flex-col gap-4 items-center">
+          <h1 className="text-3xl text-backgroundText">Login</h1>
+          <p className="text-sm text-backgroundText">
+            Add your details to login
+          </p>
+        </div>
         <Input
           name="email"
           value={loginForm.email}
@@ -40,14 +42,14 @@ export default function Login({ loginForm, setLoginForm, setPage }) {
           variant="contained"
           round="rounded-full"
           color="primary"
-          padding="py-4"
+          padding="py-[2vh]"
           action={() => {}}
         />
         <Button
           title="Forgot your password?"
           variant="text"
           color="backgroundText"
-          padding="py-4"
+          padding="py-[2vh]"
           action={() => setPage("reset-send-email-phase")}
         />
       </form>
@@ -57,10 +59,30 @@ export default function Login({ loginForm, setLoginForm, setPage }) {
           title="Login with Facebook"
           variant="contained"
           round="rounded-full"
-          color="infoo"
-          padding="py-4"
+          color="info"
+          padding="py-[2vh]"
+          icon="/assets/icons/facebook.svg"
           action={() => {}}
         />
+        <Button
+          title="Login with Google"
+          variant="contained"
+          round="rounded-full"
+          color="error"
+          padding="py-[2vh]"
+          icon="/assets/icons/google.svg"
+          action={() => {}}
+        />
+        <p className="text-sm font-[300] text-backgroundText mt-[4vh]">
+          Don't have an accout?
+          <span
+            className="text-sm text-primary font-[500]"
+            onClick={() => setPage("signup")}
+          >
+            {" "}
+            Sign Up
+          </span>
+        </p>
       </div>
     </div>
   );

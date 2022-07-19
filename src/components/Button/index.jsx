@@ -34,7 +34,7 @@ const Button = ({
       <img
         src={icon}
         alt=""
-        className="absolute left-4 top-1/2 transform -translate-y-1/2"
+        className="absolute left-6 top-1/2 transform -translate-y-1/2"
       />
     </button>
   );
