@@ -4,17 +4,25 @@ import React from "react";
 import UserLoginMethodPicker from "./pages/UserLoginMethodPicker";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import ResetSendEmailPhase from "./pages/ResetSendEmailPhase";
+import NewPassword from "./pages/NewPassword";
 
 export default function Authentication() {
   const [loginForm, setLoginForm] = React.useState({ email: "", password: "" });
-  const [SignUpForm , setSignUpForm] = React.useState({
-    name: '',
-    email:'',
-    mobileNo:'',
-    address: '',
-    password: '',
-    confirmPassword: '',
-  })
+  const [resetPasswordForm, setResetPasswordForm] = React.useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [signUpForm, setSignUpForm] = React.useState({
+    name: "",
+    email: "",
+    mobileNo: "",
+    address: "",
+    password: "",
+    confirmPassword: "",
+  });
   const [page, setPage] = React.useState("userLoginMethodPicker");
 
   const pages = {
@@ -24,14 +32,29 @@ export default function Authentication() {
         loginForm={loginForm}
         setLoginForm={setLoginForm}
         setPage={setPage}
-      />),
-      signup: (
-        <SignUp
-        SignUpForm={SignUpForm}
+      />
+    ),
+    signup: (
+      <SignUp
+        signUpForm={signUpForm}
         setSignUpForm={setSignUpForm}
         setPage={setPage}
-        />
-      ),
+      />
+    ),
+    resetSendEmailPhase: (
+      <ResetSendEmailPhase
+        resetPasswordForm={resetPasswordForm}
+        setResetPasswordForm={setResetPasswordForm}
+        setPage={setPage}
+      />
+    ),
+    newPassword: (
+      <NewPassword
+        setPage={setPage}
+        resetPasswordForm={resetPasswordForm}
+        setResetPasswordForm={setResetPasswordForm}
+      />
+    ),
   };
   return <div className="flex-1 flex overflow-hidden">{pages[page]}</div>;
 }

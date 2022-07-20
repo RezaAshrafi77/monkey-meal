@@ -50,7 +50,7 @@ export default function Login({ loginForm, setLoginForm, setPage }) {
           variant="text"
           color="backgroundText"
           padding="py-[2vh]"
-          action={() => setPage("reset-send-email-phase")}
+          action={() => setPage("resetSendEmailPhase")}
         />
       </form>
       <div className="flex flex-col items-center mt-[3vh] gap-[3vh] w-full">
