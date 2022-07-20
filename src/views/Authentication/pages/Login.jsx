@@ -59,7 +59,7 @@ export default function Login({ loginForm, setLoginForm, setPage }) {
           title="Login with Facebook"
           variant="contained"
           round="rounded-full"
-          color="info"
+          color="bg-info"
           padding="py-[2vh]"
           icon="/assets/icons/facebook.svg"
           action={() => {}}
@@ -68,7 +68,7 @@ export default function Login({ loginForm, setLoginForm, setPage }) {
           title="Login with Google"
           variant="contained"
           round="rounded-full"
-          color="error"
+          color="bg-error"
           padding="py-[2vh]"
           icon="/assets/icons/google.svg"
           action={() => {}}
