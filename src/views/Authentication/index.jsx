@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import ResetSendEmailPhase from "./pages/ResetSendEmailPhase";
 import NewPassword from "./pages/NewPassword";
+import Introduction from "./pages/Introduction";
 
 export default function Authentication() {
   const [loginForm, setLoginForm] = React.useState({ email: "", password: "" });
@@ -23,7 +24,7 @@ export default function Authentication() {
     password: "",
     confirmPassword: "",
   });
-  const [page, setPage] = React.useState("userLoginMethodPicker");
+  const [page, setPage] = React.useState("introduction");
 
   const pages = {
     userLoginMethodPicker: <UserLoginMethodPicker setPage={setPage} />,
@@ -55,6 +56,9 @@ export default function Authentication() {
         setResetPasswordForm={setResetPasswordForm}
       />
     ),
+    introduction: (
+      <Introduction setPage={setPage} />
+    )
   };
   return <div className="flex-1 flex overflow-hidden">{pages[page]}</div>;
 }
